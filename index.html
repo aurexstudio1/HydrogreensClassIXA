@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Hydrogreens</title>
+<style>
+:root{--f:#123D2A;--e:#2E8B57;--s:#A8C3A0;--c:#F7F7EF;--m:#E3F2E5;--g:#C7A96B;--t:#16241c;--card:rgba(255,255,255,.62);--bd:rgba(255,255,255,.7);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:border-box}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--c:#0d1f16;--m:#12291d;--t:#e8f1e6;--card:rgba(20,50,35,.6);--bd:rgba(168,195,160,.2)}}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--c);color:var(--t);overflow-x:hidden}
+h1,h2,h3,.serif{font-family:Georgia,"Playfair Display","Times New Roman",serif;font-weight:600;line-height:1.15}
+section{padding:90px 6vw;position:relative}.wrap{max-width:1150px;margin:auto}
+.eyebrow{color:var(--e);letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;font-weight:700}
+h2{font-size:clamp(2rem,4.5vw,3rem);margin:8px 0 14px;color:var(--f)}@media(prefers-color-scheme:dark){:root:not([data-theme=light]) h2{color:var(--s)}}
+.lead{max-width:640px;opacity:.85;margin-bottom:36px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) 5vw 14px;transition:.4s;color:#fff}
+nav.sc{background:rgba(18,61,42,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding-top:calc(8px + env(safe-area-inset-top,0px));padding-bottom:8px}
+nav b{font:600 1.35rem Georgia,serif}nav ul{display:flex;gap:6px;list-style:none;padding:0}
+nav a{color:#fff;text-decoration:none;padding:7px 13px;border-radius:99px;font-size:.92rem;transition:.3s}nav a:hover,nav a.on{background:rgba(255,255,255,.18)}
+#bt{display:none;background:none;border:0;color:#fff;font-size:1.7rem}
+@media(max-width:820px){#bt{display:block}nav ul{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(18,61,42,.96);padding:10px 5vw;display:none}nav ul.o{display:flex}}
+#hero{min-height:100vh;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;background:radial-gradient(circle at 30% 20%,#2E8B57 0,#123D2A 60%,#0a2418 100%)}
+#hero .in{position:relative;z-index:2;max-width:880px}
+.badge{display:inline-block;padding:7px 18px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border-radius:99px;font-size:.85rem;margin-bottom:26px}
+#hero h1{font-size:clamp(2.4rem,7vw,5rem);margin-bottom:20px}#hero h1 em{color:var(--g);font-style:italic}
+#hero p{font-size:1.15rem;opacity:.9;max-width:600px;margin:0 auto 34px}
+.btn{display:inline-block;position:relative;overflow:hidden;padding:15px 34px;border-radius:99px;background:var(--g);color:var(--f);font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:1rem;transition:.35s;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+
+.leaf{position:absolute;top:-60px;opacity:.35;animation:fall linear infinite;z-index:1}
+@keyframes fall{to{transform:translateY(115vh) rotate(360deg)}}
+.rip{position:absolute;border:2px solid rgba(255,255,255,.18);border-radius:50%;animation:rp 7s ease-out infinite;z-index:1}
+@keyframes rp{from{transform:scale(.2);opacity:1}to{transform:scale(1.6);opacity:0}}
+.glass{background:var(--card);border:1px solid var(--bd);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:24px;box-shadow:0 10px 30px rgba(18,61,42,.1)}
+.tilt{transition:transform .25s,box-shadow .3s;transform-style:preserve-3d;position:relative;overflow:hidden}
+
+
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.pc{cursor:pointer;padding:0;text-align:left;font:inherit;color:inherit}
+.pc .im{height:190px;overflow:hidden;background:linear-gradient(160deg,var(--m),var(--s))}.pc svg{width:100%;height:100%;transition:transform .6s}
+.pc .bd{padding:18px 20px 20px}.pc h3{font-size:1.3rem;margin-bottom:4px}
+.tag{display:inline-block;font-size:.75rem;padding:3px 11px;border-radius:99px;background:var(--m);color:var(--f);font-weight:600;margin-right:4px}
+.pr{display:flex;justify-content:space-between;margin-top:12px;align-items:baseline}.pr b{font:700 1.5rem Georgia,serif;color:var(--e)}.pr small{opacity:.7}
+#about{background:var(--m)}.two{display:grid;gap:40px;grid-template-columns:1fr 1fr;align-items:center}@media(max-width:800px){.two{grid-template-columns:1fr}}
+.st{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}.st div{padding:24px;text-align:center}.st b{display:block;font:600 2.6rem Georgia,serif;color:var(--e)}
+.steps{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.steps .glass{padding:26px}.steps .ic{font-size:2rem}.steps h3{margin:8px 0;font-size:1.2rem}
+#sp{background:linear-gradient(180deg,var(--c),var(--m))}
+.sp{padding:26px}.sp h3{margin-bottom:12px}.row{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px dashed rgba(46,139,87,.3);font-size:.95rem}.row:last-child{border:0}
+.row span:last-child{white-space:nowrap}.row b{color:var(--e)}.row i{font-style:normal;opacity:.65;font-size:.82rem}
+.bar{height:8px;border-radius:9px;background:var(--m);margin-top:6px;overflow:hidden}.bar u{display:block;height:100%;background:linear-gradient(90deg,var(--e),var(--g));border-radius:9px}
+.tools{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+#q{flex:1;min-width:200px;padding:13px 20px;border-radius:99px;border:1px solid var(--s);background:var(--card);font:inherit;color:inherit}#q:focus{outline:2px solid var(--e)}
+.ch{padding:10px 20px;border-radius:99px;border:1px solid var(--s);background:var(--card);cursor:pointer;font:inherit;color:inherit;transition:.3s}.ch.on{background:var(--e);color:#fff;border-color:var(--e)}
+.gal{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gal div{height:200px;border-radius:20px;overflow:hidden;position:relative}.gal svg{width:100%;height:100%;transition:transform .6s}
+.gal span{position:absolute;left:12px;bottom:10px;color:#fff;font-weight:600;text-shadow:0 1px 6px #000}
+.xr{padding:60px 6vw;color:#fff;text-align:center}
+.tabs{margin-top:40px}
+footer{background:linear-gradient(160deg,#0a2418,var(--f) 60%,#1d5a3c);color:#e8f1e6;padding:70px 6vw 36px;text-align:center}
+footer h2{color:#fff}footer a{color:var(--g);font-weight:600;text-decoration:none;border-bottom:1px solid transparent;transition:.3s}footer a:hover{border-color:var(--g)}
+.ct{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:26px 0 40px}.ct div{padding:18px 30px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:20px}
+#md{position:fixed;inset:0;z-index:100;display:none;place-items:center;background:rgba(10,36,24,.65);backdrop-filter:blur(6px);padding:20px}#md.o{display:grid}
+#md .box{max-width:560px;width:100%;max-height:90vh;overflow:auto;background:var(--c);border-radius:28px;animation:pop .35s}@keyframes pop{from{transform:scale(.9);opacity:0}}
+#md .im{height:240px;background:linear-gradient(160deg,var(--m),var(--s))}#md .im svg{width:100%;height:100%}#md .bd{padding:26px}
+#md .x{position:absolute;margin:14px;right:auto;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.85);font-size:1.2rem;cursor:pointer}
+#cg{position:fixed;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;pointer-events:none;z-index:60;background:radial-gradient(circle,rgba(46,139,87,.2),transparent 65%);transition:opacity .3s;opacity:0}
+#cd{position:fixed;width:12px;height:12px;margin:-6px;border-radius:50%;background:var(--e);border:2px solid var(--g);pointer-events:none;z-index:200;opacity:0;transition:width .2s,height .2s,margin .2s}
+.btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 14px 30px rgba(199,169,107,.5)}
+.tilt:hover{box-shadow:0 22px 50px rgba(46,139,87,.3)}
+.tilt::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:.3s;background:radial-gradient(260px circle at var(--x,50%) var(--y,50%),rgba(46,139,87,.24),transparent 70%)}.tilt:hover::after{opacity:1}
+.pc:hover svg,.gal div:hover svg{transform:scale(1.13)}
+.ch:hover,nav a:hover{transform:translateY(-2px)}.ch:hover{border-color:var(--e)}
+.tr{position:fixed;width:10px;height:10px;margin:-5px;border-radius:50% 0 50% 50%;pointer-events:none;z-index:150;animation:tf .9s ease-out forwards}@keyframes tf{to{transform:translate(var(--dx),var(--dy)) rotate(220deg) scale(.2);opacity:0}}
+.rp{position:fixed;width:20px;height:20px;margin:-10px;border:2px solid var(--e);border-radius:50%;pointer-events:none;z-index:150;animation:rpl .8s ease-out forwards}@keyframes rpl{to{transform:scale(6);opacity:0}}
+.rv{opacity:0;transform:translateY(34px);transition:1s}.rv.v{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}.leaf,.rip,#cg,#cd,.tr,.rp{display:none}}
+@media(hover:none){#cg,#cd{display:none}}
+</style></head><body>
+<div id="cg"></div><div id="cd"></div>
+<nav id="nv"><b>🌿 Hydrogreens</b><button id="bt" aria-label="Menu">☰</button><ul id="ul"><li><a href="#home">Home</a></li><li><a href="#about">About Hydrogreens</a></li><li><a href="#plants">Products</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+
+<header id="home"><section id="hero"><div id="lv"></div><div class="rip" style="left:15%;bottom:12%;width:300px;height:300px"></div><div class="rip" style="right:12%;bottom:25%;width:220px;height:220px;animation-delay:3s"></div>
+<div class="in" id="hin"><span class="badge">Class 9 A | Kaushal Vikas Project</span>
+<h1>Explore Class 9th A Kaushal Vikas <em>“Hydrogreens”</em></h1>
+<p>Discover the future of sustainable farming through the power of water, innovation, and green living.</p>
+<a class="btn" href="#about">Explore Hydrogreens</a></div></section></header>
+
+<section id="about"><div class="wrap two"><div class="rv"><span class="eyebrow">About Hydrogreens</span><h2>Plants grown with water, sold with pride</h2>
+<p>Hydrogreens is the Class IX-A Kaushal Vikas project. We grow hydroponic plants — Money Plant, Desk Plant, Tulsi, Methi, Sprout, Chia seeds, Lucky Bamboo, Garlic and more — in cans, glass jars and plastic containers, along with the nutrient solution, each with its selling price (SP).</p></div>
+<div class="st rv" id="stats"></div></div></section>
+
+<section><div class="wrap"><span class="eyebrow">Hydroponics Explained</span><h2>Farming without soil</h2><p class="lead">Hydroponics grows plants with their roots in water enriched with nutrients instead of soil.</p>
+<div class="steps rv"><div class="glass tilt"><div class="ic">💧</div><h3>Water</h3><p>Roots sit in water that carries everything the plant needs.</p></div><div class="glass tilt"><div class="ic">🧪</div><h3>Nutrient solution</h3><p>A few drops of solution (listed in our sheet) feed the plant.</p></div><div class="glass tilt"><div class="ic">☀️</div><h3>Light</h3><p>Sunlight or bright indoor light powers growth.</p></div><div class="glass tilt"><div class="ic">🌱</div><h3>Benefits</h3><p>Uses little space, stays tidy and suits desks and windows.</p></div></div></div></section>
+
+
+<section id="plants"><div class="wrap"><span class="eyebrow">Class IX-A · Hydrogreens</span><h2>Our products</h2><p class="lead">Every product from our Class IX-A Hydrogreens sheet with its selling price (SP). Tap a card for details, search by name, or filter by container.</p>
+<div class="tools"><input id="q" type="search" placeholder="Search products by name…" aria-label="Search products"><div id="fl" style="display:flex;gap:8px;flex-wrap:wrap"></div></div>
+<div class="grid" id="pg"></div><p id="no" style="display:none;text-align:center;opacity:.7;margin-top:20px">No products match your search.</p></div></section>
+
+<section id="gallery" style="background:var(--m)"><div class="wrap"><span class="eyebrow">Gallery</span><h2>The Hydrogreens setup</h2><p class="lead">Illustrations of our containers and plants.</p><div class="gal" id="gl"></div></div></section>
+
+<footer id="contact"><span class="eyebrow" style="color:var(--g)">Contact</span><h2>✉️ Contact Us</h2>
+<div class="ct"><div>Email<br><a href="mailto:AurexStudio@proton.me">AurexStudio.proton.me</a></div><div>GitHub<br><a href="https://github.com/aurexstudio" target="_blank" rel="noopener">github.com/aurexstudio</a></div></div>
+<p class="serif" style="font-size:1.15rem">Designed &amp; crafted with 💗 by AurexStudio</p><p style="opacity:.55;font-size:.85rem;margin-top:8px">Hydrogreens · Class 9 A · Kaushal Vikas</p></footer>
+
+<div id="md" role="dialog" aria-modal="true"><div class="box"><button class="x" id="mx" aria-label="Close">✕</button><div class="im" id="mi"></div><div class="bd" id="mb"></div></div></div>
+<script>
+const D=[["Can",[["Money plant",50,80],["Desk plant",50,65],["Tulsi Plant",50,80],["Methi plant",35,45]]],
+["Glass",[["Money plant",80,100],["12 Money Plant (cost for each)",90,120],["Sprout Plant",70,90],["Chia seeds plant",null,90],["Lucky Bamboo",50,200],["Multi type Plant",115,130],["Money Plant (Hanging)",100,150]]],
+["Plastic",[["Money Plant",20,40]]],["Additional New Plants",[["Lucky Bamboo",400,450],["Garlic",40,50],["Money Plant",70,105],["Solution",25,30]]]];
+const $=s=>document.querySelector(s),R=v=>v==null?"—":"₹"+v;
+const P=[];D.forEach(([c,a])=>a.forEach(([n,cp,sp])=>P.push({n,c,cp,sp,i:P.length})));
+function art(p,big){const n=p.n.toLowerCase(),h=n.includes("solution")?200:n.includes("tulsi")?100:n.includes("methi")||n.includes("sprout")||n.includes("chia")?85:n.includes("garlic")?60:135;
+const L=(x,y,r,k)=>`<ellipse cx="${x}" cy="${y}" rx="22" ry="11" transform="rotate(${r} ${x} ${y})" fill="hsl(${h+k},50%,${38+k/2}%)"/>`;
+let pl="";if(n.includes("bamboo"))pl=[96,110,124].map((x,i)=>`<rect x="${x}" y="${50+i*10}" width="7" height="${70-i*10}" rx="3" fill="hsl(${h},45%,45%)"/><rect x="${x-1}" y="${80+i*6}" width="9" height="3" fill="#C7A96B"/>`).join("");
+else if(n.includes("solution"))pl=`<rect x="85" y="55" width="50" height="70" rx="10" fill="#A8C3A0"/><rect x="98" y="42" width="24" height="16" rx="3" fill="#123D2A"/><text x="110" y="97" font-size="11" text-anchor="middle" fill="#123D2A">Nutrient</text>`;
+else if(n.includes("sprout")||n.includes("chia")||n.includes("methi"))pl=[88,100,112,124,136].map((x,i)=>`<path d="M${x} 125 Q${x+(i%2?8:-8)} 95 ${x+(i-2)*4} ${80-i%3*6}" stroke="hsl(${h},50%,45%)" stroke-width="3" fill="none"/>`+L(x+(i-2)*4,78-i%3*6,i*30-60,i*3)).join("");
+else if(n.includes("garlic"))pl=`<ellipse cx="110" cy="100" rx="22" ry="20" fill="#f3efe0"/><path d="M110 80 Q105 55 112 45" stroke="#2E8B57" stroke-width="4" fill="none"/>`;
+else pl=`<path d="M110 125 Q108 90 100 70M110 125 Q115 85 128 65M110 125 Q110 80 112 50" stroke="hsl(${h},45%,35%)" stroke-width="3" fill="none"/>`+L(98,68,-50,0)+L(130,63,40,6)+L(112,48,-10,-4)+L(92,92,-30,8)+L(130,90,30,2);
+const ct=p.c=="Glass"?`<path d="M82 118h56l-5 40q0 8-8 8H95q-8 0-8-8z" fill="rgba(200,235,245,.55)" stroke="#fff" stroke-width="2"/><path d="M86 135h48l-2 23q0 6-6 6H94q-6 0-6-6z" fill="rgba(80,170,210,.45)"/>`:p.c=="Can"?`<rect x="85" y="118" width="50" height="48" rx="4" fill="#9aa5a0"/><rect x="85" y="130" width="50" height="6" fill="#C7A96B"/>`:p.c=="Plastic"?`<path d="M84 118h52l-6 48H90z" fill="#2E8B57" opacity=".85"/>`:`<path d="M82 118h56l-5 40q0 8-8 8H95q-8 0-8-8z" fill="rgba(200,235,245,.55)" stroke="#fff" stroke-width="2"/>`;
+if(n.includes("solution"))return`<svg viewBox="0 0 220 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${p.n}">${pl}</svg>`;
+return`<svg viewBox="0 0 220 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${p.n} in ${p.c}">${pl}${ct}</svg>`}
+const sc=p=>p.c=="Additional New Plants"?"New":p.c;
+// stats
+const pl=P.filter(p=>p.n!="Solution"),sps=P.map(p=>p.sp);
+$("#stats").innerHTML=[[pl.length,"Plant listings"],[D.length-1,"Container types"]].map(([v,l])=>`<div class="glass tilt"><b>${v}</b>${l}</div>`).join("");
+// plants
+const F=["All","Can","Glass","Plastic","New"];let cf="All";
+$("#fl").innerHTML=F.map(f=>`<button class="ch${f=="All"?" on":""}">${f=="New"?"Additional New Plants":f}</button>`).join("");
+function draw(){const q=$("#q").value.toLowerCase().trim(),l=P.filter(p=>(cf=="All"||sc(p)==cf)&&p.n.toLowerCase().includes(q));
+$("#pg").innerHTML=l.map(p=>`<button class="glass pc tilt" data-i="${p.i}"><div class="im">${art(p)}</div><div class="bd"><h3>${p.n}</h3><span class="tag">${p.c}</span><div class="pr"><b>${R(p.sp)}</b><small>SP</small></div></div></button>`).join("");$("#no").style.display=l.length?"none":"block";tl()}
+$("#q").oninput=draw;$("#fl").onclick=e=>{if(e.target.tagName!="BUTTON")return;[...$("#fl").children].forEach(b=>b.classList.toggle("on",b==e.target));cf=e.target.textContent.startsWith("Add")?"New":e.target.textContent;draw()};
+$("#pg").onclick=e=>{const c=e.target.closest(".pc");if(!c)return;const p=P[c.dataset.i];$("#mi").innerHTML=art(p);
+$("#mb").innerHTML=`<h3 style="font-size:1.8rem">${p.n}</h3><p><span class="tag">${p.c=="Additional New Plants"?"Additional New Plant":p.c+" container"}</span></p><div class="row"><span>Selling price (SP)</span><b>${R(p.sp)}</b></div><p style="margin-top:14px;opacity:.8">${p.n=="Solution"?"Nutrient solution for our hydroponic plants, from the Class IX-A sheet.":"Grown hydroponically by Class IX-A — roots in water with nutrient solution, no soil needed."}</p>`;$("#md").classList.add("o");$("#mx").focus()};
+const cl=()=>$("#md").classList.remove("o");$("#mx").onclick=cl;$("#md").onclick=e=>{if(e.target.id=="md")cl()};addEventListener("keydown",e=>{if(e.key=="Escape")cl()});
+// gallery
+$("#gl").innerHTML=["Money plant|Glass","Tulsi Plant|Can","Lucky Bamboo|Glass","Methi plant|Can","Money Plant|Plastic","Sprout Plant|Glass","Solution|Can","Garlic|Can"].map(s=>{const[n,c]=s.split("|");return`<div class="rv">${art({n,c})}<span>${n}</span></div>`}).join("");
+// leaves
+$("#lv").innerHTML=Array.from({length:12},(_,i)=>`<svg class="leaf" style="left:${i*8.5}%;animation-duration:${14+i%5*4}s;animation-delay:-${i*3}s" width="${24+i%4*10}" viewBox="0 0 24 24"><path d="M2 22C2 10 10 2 22 2c0 12-8 20-20 20z" fill="#A8C3A0"/></svg>`).join("");
+// effects
+const nv=$("#nv"),mv=matchMedia("(prefers-reduced-motion:reduce)").matches;
+addEventListener("scroll",()=>nv.classList.toggle("sc",scrollY>40));
+$("#bt").onclick=()=>$("#ul").classList.toggle("o");$("#ul").onclick=()=>$("#ul").classList.remove("o");
+const as=[...document.querySelectorAll("#ul a")],io2=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&as.forEach(a=>a.classList.toggle("on",a.getAttribute("href")=="#"+e.target.id))),{threshold:.4});
+document.querySelectorAll("header,section[id],footer").forEach(s=>io2.observe(s));
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("v");o.unobserve(e.target)}}),{threshold:.1}).observe;
+const io=new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("v");o.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll(".rv").forEach(x=>io.observe(x));
+function tl(){document.querySelectorAll(".tilt").forEach(c=>{if(c._t)return;c._t=1;c.addEventListener("pointermove",e=>{if(mv)return;const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.setProperty("--x",x+"px");c.style.setProperty("--y",y+"px");if(e.pointerType!="touch")c.style.transform=`perspective(700px) rotateX(${(.5-y/r.height)*8}deg) rotateY(${(x/r.width-.5)*8}deg) translateY(-6px)`});c.addEventListener("pointerleave",()=>c.style.transform="")})}
+let lt=0;const cols=["#A8C3A0","#2E8B57","#C7A96B","#E3F2E5"];
+function spark(x,y,n){for(let i=0;i<n;i++){const d=document.createElement("span"),a=Math.random()*6.28,r=14+Math.random()*34;d.className="tr";d.style.cssText=`left:${x}px;top:${y}px;--dx:${Math.cos(a)*r}px;--dy:${Math.sin(a)*r+16}px;background:${cols[i%4]}`;document.body.appendChild(d);setTimeout(()=>d.remove(),900)}}
+addEventListener("pointermove",e=>{if(mv)return;if(e.pointerType!="touch"){$("#cg").style.cssText+=`;left:${e.clientX}px;top:${e.clientY}px;opacity:1`;$("#cd").style.cssText+=`;left:${e.clientX}px;top:${e.clientY}px;opacity:1`;if(scrollY<innerHeight)$("#hin").style.transform=`translate(${(e.clientX/innerWidth-.5)*-18}px,${(e.clientY/innerHeight-.5)*-14}px)`}const t=performance.now();if(t-lt<45)return;lt=t;spark(e.clientX,e.clientY,2)});
+addEventListener("pointerdown",e=>{if(mv)return;const r=document.createElement("span");r.className="rp";r.style.left=e.clientX+"px";r.style.top=e.clientY+"px";document.body.appendChild(r);setTimeout(()=>r.remove(),800);spark(e.clientX,e.clientY,10)});
+
+draw();tl();
+</script></body></html>
