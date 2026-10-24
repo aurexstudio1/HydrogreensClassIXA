@@ -1,1 +1,1 @@
-Hydroponics is a modern method of growing plants without soil, using nutrient-rich water to provide essential minerals for healthy growth. It saves water, requires less space, and allows plants to grow efficiently in a controlled environment. It is a sustainable and innovative way of farming for the future. 🌱
+
